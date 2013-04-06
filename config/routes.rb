@@ -1,4 +1,7 @@
 Bubblio::Application.routes.draw do
+
+  root to: "bubbles#new"
+
   get "items/new"
 
   get "items/show"

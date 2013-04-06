@@ -6,6 +6,7 @@ class BubblesController < ApplicationController
   def show
   	@bubble = Bubble.find(params[:id])
     @items = @bubble.items.order("happened_at DESC")
+    @links = @bubble.links.order("happened_at DESC")
   end
 
   def create

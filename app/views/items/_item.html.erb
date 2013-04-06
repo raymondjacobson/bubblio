@@ -1,4 +1,6 @@
 <div>
-	<%= link_to item.file_url.to_s, item.file_url.to_s %>
+	<% file = item.file_url.to_s %>
+	<%= link_to file, file %>
+	Of extension <%= getExtension(file) %>
 	<%= link_to "Drop", bubble_item_path(@bubble, item), :confirm => 'Are you sure?', method: :delete %>
 </div>

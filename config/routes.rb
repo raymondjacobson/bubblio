@@ -35,6 +35,9 @@ Bubblio::Application.routes.draw do
     resources :links
   end
 
+
+  match '/bubbles/1xib0', to: '/bubbles/2'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

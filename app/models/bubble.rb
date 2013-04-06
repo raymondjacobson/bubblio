@@ -11,6 +11,7 @@
 class Bubble < ActiveRecord::Base
   attr_accessible :title
 
-  has_many :items, :links
+  has_many :items, dependent: :destroy
+  has_many :links, dependent: :destroy
 
 end

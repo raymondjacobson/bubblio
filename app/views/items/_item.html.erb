@@ -1,0 +1,4 @@
+<div>
+	<%= link_to item.file_url.to_s, item.file_url.to_s %>
+	<%= link_to "Drop", bubble_item_path(@bubble, item), :confirm => 'Are you sure?', method: :delete %>
+</div>

@@ -1,0 +1,7 @@
+<%= form_for [@bubble, @item], :html => {:multipart => true} do |f| %>
+	<p>
+		<%= f.label :file %><br />
+		<%= f.file_field :file %>
+	</p>
+	<p><%= f.submit %></p>
+<% end %>

@@ -2,6 +2,10 @@ Bubblio::Application.routes.draw do
 
   root to: "bubbles#new"
 
+  match '/team', to: "pages#team"
+  match '/terms', to: "pages#terms"
+  match '/what', to: "pages#what"
+
   get "items/new"
 
   get "items/show"
@@ -25,6 +29,11 @@ Bubblio::Application.routes.draw do
   get "pages/terms"
 
   get "pages/what"
+
+  resources :bubbles do
+    resources :items
+    resources :links
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

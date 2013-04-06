@@ -23,6 +23,8 @@ Bubblio::Application.routes.draw do
 
   get "pages/what"
 
+  match '/ZeroClipboard', to: "public#ZeroClipboard.swf"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

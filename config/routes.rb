@@ -1,4 +1,28 @@
 Bubblio::Application.routes.draw do
+  get "items/new"
+
+  get "items/show"
+
+  get "items/create"
+
+  get "links/new"
+
+  get "links/show"
+
+  get "links/create"
+
+  get "bubbles/new"
+
+  get "bubbles/show"
+
+  get "bubbles/create"
+
+  get "pages/team"
+
+  get "pages/terms"
+
+  get "pages/what"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

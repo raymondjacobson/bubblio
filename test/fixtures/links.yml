@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  hash: MyString
+  accessed_at: 2013-04-06 13:05:45
+
+two:
+  hash: MyString
+  accessed_at: 2013-04-06 13:05:45

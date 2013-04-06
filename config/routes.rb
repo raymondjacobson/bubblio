@@ -36,7 +36,7 @@ Bubblio::Application.routes.draw do
   end
 
 
-  match '/bubbles/1xib0', to: '/bubbles/2'
+  match 'b/1xib0', to: 'bubbles#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

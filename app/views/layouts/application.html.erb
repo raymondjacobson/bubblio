@@ -52,7 +52,15 @@
 
   	function switchButton(element, string){
   		element.html(string);
-  		return string;
+  	}
+
+  	function createAndRedirect(){
+  		var newLink = $.get("/bubbles/" + currentIDTest() + " /links/new", function(data){
+				window.location = "http://bubbl.io/"+data;
+			}).done(function(){
+			}).fail(function(){
+			}).always(function(data){
+			});
   	}
 
 

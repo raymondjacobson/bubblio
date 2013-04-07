@@ -34,9 +34,7 @@ Bubblio::Application.routes.draw do
     resources :items
     resources :links
   end
-  #resources :bubbles
-  #resources :items
-  #resources :links
+  
   # Routes for hashed URL
   match '/*path', to: 'bubbles#show'
   

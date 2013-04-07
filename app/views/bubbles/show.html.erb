@@ -1,5 +1,5 @@
 <%#KILL ALL EXPIRED LINKS %>
-<% cleanLinks(@bubble) %>
+<%# cleanLinks(@bubble) %>
 
 <%#= render 'items/form' %>
 <%#= render 'links/form' %>
@@ -20,4 +20,5 @@
 			<%= render @bubble.items %>
 		<% end %>
 	</ul>
+	<%= render @bubble.links %>
 </div>

@@ -57,77 +57,39 @@
     }
     return IDFromForm;
   }
-  
-  $(function(){
-    //alert("asdf");
-    var value = getIDFromForm();
-    alert(value);
-  });
-/*
 
-  	function currentIDTest(){
-  		var currentID = document.URL;
-  		var currentID = ""+currentID;
-  		var currentID = currentID.slice(-6,-1);
-  		return currentID;
-  	}
 
-  	function switchButton(element, string){
-  		element.html(string);
-  	}
+	function getBubbleID(hash){
+		var bubbleID;
+		$.get({
+			url: "/bubbles/getID",
+			data: {hash: hash}
+		}).done(function(data){
+			bubbleID = data;
+		});
+		return bubbleID;
+  }
 
-  	function createAndRedirect(){
-  		var newLink = $.get("/bubbles/" + currentIDTest() + "/links/new", function(data){
-				window.location = "http://bubbl.io/"+data;
-			}).done(function(){
-			}).fail(function(){
-			}).always(function(data){
-			});
-  	}
-
-    function getBubbleID(){
-      var ID_value;
-      var bubbleID = $.get("/bubbles/getID", function(data){
-        ID_value = data;
-      }).done(function(){
-      }).fail(function(){
-      }).always(function(data){ 
-      });
-      console.log(ID_value);
-      return String(ID_value);
-    }
-	function generateLink(){
-		var newLink = $.get("/bubbles/" + currentIDTest() + " /links/new", function(data){
-				switchButton($(".introBlock .textcenter h1"), "http://bubbl.io/"+data);
-			}).done(function(){
-			}).fail(function(){
-			}).always(function(data){
-			});
+	function constructURL(hash){
+		var url = "/"+hash;
+		return url;
 	}
 
+	function redirectTo(url){
+		window.location = url;
+	}
 
-  	$(function(){
-  		$("#linkGen").click(function(){
-  			generateLink();
-  		});
+	function switchContent(element, content){
+		element.html(content);
+	}
 
-  		$(".newBubble form").change(function(){
-  			createAndRedirect();
-  		})
-*/
+	$(function(){
 
-  		/*var copy_link = generateLink();
-   		$("#linkGen").zclip({
-		 	path: "../../../ZeroClipboard.swf",
-		 	copy: copy_link,
-		 	beforeCopy:function(){
-		 		$(this).html("LINK IS COPIED TO YOUR CLIPBOARD")
-		 		alert("beforecopy");
-		 	},
-		 	afterCopy:function(){
-		 		alert("aftercopy");
-		 	}*/
-	//});
+		$(".newBubble form").change(function(){
+			createAndRedirect();
+		})
+		
+  });
 
   	
 

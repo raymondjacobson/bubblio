@@ -844,3 +844,9 @@ footer a:hover {
 footer a:first-child {
   margin-left: 0;
 }
+.team img {
+  height: 150px;
+}
+.term {
+  margin-bottom: 50px;
+}

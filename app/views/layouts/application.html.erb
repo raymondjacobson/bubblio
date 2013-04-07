@@ -17,12 +17,6 @@
 
 <%= yield %>
 
-<% if Rails.env.development? %>
-	<div class="debug" %>
-		<%= debug(params) %>
-	</div>
-<% end %>
-
 	<footer class="row fullwidth">
 		<div class="col_12 textcenter">
 			<a href="/bubbles/new/">HOME</a>

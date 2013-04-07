@@ -1,7 +1,13 @@
 <%= form_for [@bubble, @item], :html => {:multipart => true} do |f| %>
 	<p>
-		<%= f.label :file %><br />
-		<%= f.file_field :file %>
+		<%= f.file_field :file, :id=>'choose_file' %>
 	</p>
-	<p><%= f.submit %></p>
+	<p><%= f.submit nil, :id=>'submit_file' %></p>
 <% end %>
+<script>
+  var file = document.getElementById('choose_file');
+  var submit = document.getElementById('submit_file');
+  file.onchange = function(){
+  		this.form.submit();
+  };
+ </script>

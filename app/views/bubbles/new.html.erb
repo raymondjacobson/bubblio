@@ -1,2 +1,19 @@
-<h1>Bubbles#new</h1>
-<p>Find me in app/views/bubbles/new.html.erb</p>
+<div class="row introBlock">
+	<div class="col_2">&nbsp;</div>
+	<div class="col_8 textcenter">
+		<h1 class="alt">Collaborate instantly. No accounts. Just a <span class="emphasis alt">Bubbl.</span></h1>
+		<br>
+		<a href="/pages/what/" class="btn red">What's a bubbl?</a>
+	</div>
+	<div class="col_2 last">&nbsp;</div>
+</div>
+<div class="row dropZone textcenter newBubble">
+	<%= render 'items/form' %>
+	<ul>
+		<% if @bubble.items.any? %>
+			<%= render @bubble.items %>
+		<% end %>
+	</ul>
+
+</div>
+<!-- add render 'form' -->

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130406170643) do
+ActiveRecord::Schema.define(:version => 20130406195131) do
 
   create_table "bubbles", :force => true do |t|
     t.string   "title"
@@ -22,13 +22,16 @@ ActiveRecord::Schema.define(:version => 20130406170643) do
   create_table "items", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "file"
+    t.integer  "bubble_id"
   end
 
   create_table "links", :force => true do |t|
-    t.string   "hash"
+    t.string   "link_hash"
     t.datetime "accessed_at"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "bubble_id"
   end
 
 end

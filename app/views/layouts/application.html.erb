@@ -1,14 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bubblio</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag "common" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700|Bree+Serif' rel='stylesheet' type='text/css'>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+  <%= javascript_include_tag "dropzone.min" %>
+	<%= javascript_include_tag "zClip" %>
+
 </head>
 <body>
+	<header class="row logo fullwidth"> &nbsp;
+	</header>
 
 <%= yield %>
 
+<% if Rails.env.development? %>
+	<div class="debug" %>
+		<%= debug(params) %>
+	</div>
+<% end %>
+
+	<footer class="row fullwidth">
+		<div class="col_12 textcenter">
+			<a href="/bubbles/new/">HOME</a>
+			<a href="/pages/team.html">TEAM</a>
+			<a href="/pages/terms.html">TERMS</a>
+			<a href="/pages/what.html">ABOUT BUBBL</a>
+		</div>
+	</footer>
 </body>
+<script>
+
+	$(function(){
+		$("#linkGen").click(function(){
+			var jqxhr = 
+				$.get("/bubbles/"+getIDFromForm(".dropZone form")+"/links/new", function(data){
+				}).success(function(){
+
+				}).fail(function(){
+
+				}).always(function(data){
+					switchContent($(".introBlock h1"), constructURL(data));
+				});
+		})
+
+  	});
+
+  function getHashFromURL(){
+    var currentURL = document.URL;
+    var currentURL = ""+currentURL;
+    var currentURL = currentURL.slice(-6,-1);
+    return currentURL;
+  }
+
+
+  function getIDFromForm(form){
+    return $(form).attr('action').split('/')[2];
+  }
+
+
+	function getBubbleID(hash){
+		var bubbleID;
+		$.get({
+			url: "/bubbles/getID",
+			data: {hash: hash}
+		}).done(function(data){
+			bubbleID = data;
+		});
+		return bubbleID;
+  }
+
+  	function getBubbleHash(id){
+  		console.log(id);
+  		var jqxhr = 
+  			$.get("/bubbles/"+id+"/links/new", function(data){
+	  			}).success(function(data){
+	  				console.log("Success");
+	  			}).fail(function(){
+	  				console.log("Failure");
+	  			}).always(function(data){
+	  				console.log(data);
+	  				console.log("Always")
+	  				$("#hidden_field").val(constructURL(data));
+	  				console.log($("#hidden_field").val());
+		  			manualSubmit();
+	  			});
+  	}
+
+
+	function constructURL(hash){
+		return "/"+hash;
+	}
+
+
+	function redirectTo(url){
+		window.location = url;
+	}
+
+	function switchContent(element, content){
+		element.html(content);
+	}
+
+	function test() {
+		console.log(constructURL(getBubbleHash(getIDFromForm($(".newBubble")))));
+	}
+
+	
+
+  	
+
+  </script>
 </html>

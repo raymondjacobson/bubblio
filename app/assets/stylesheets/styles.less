@@ -1,0 +1,164 @@
+/**************************************************
+THEME CONTROLLER by EMBERI CO.
+Name: Emberi Co.
+Author: Ethan Bond
+Date: 3/19/2013
+URL: emberi.co
+****************************************************/
+
+
+/********** Document & Grid *********/
+@sizeBodyWidth:1140px;
+@sizeSectionHeight:auto;
+@sizeVerticalSpacing:0;
+
+
+/******** Font Declarations *********/
+@fontSans: "Noto Sans", Helvetica, Arial, sans-serif; 
+@fontSerif: "Bree Serif", Georgia, Times New Roman, serif; 
+@fontAlt1: "Sacramento", script;
+@fontScale: 50%;
+
+
+/******** Paragraph Types **********/
+/**DEFAULT**/
+.paragraphDefault {
+	
+	@fontScale: 				100%;
+
+	@supertitleFont: 			@fontSans;
+	@supertitleColor: 			#43433f;
+	@supertitleOpacity: 		.6;
+	@supertitleMarginTop: 		0;
+	@supertitleMarginBottom: 	0;
+	@supertitleTransform: 		uppercase;
+	@supertitleJustify: 		left;
+	@supertitleTracking: 		0;
+
+	@headerFont: 				@fontSerif;
+	@headerColor: 				#9a7aa6;
+	@headerOpacity:         	1;
+	@headerMarginTop: 			2em;
+	@headerMarginBottom: 		1em;
+	@headerTransform:    		none;
+	@headerJustify: 			left;
+	@headerTracking: 			0;
+
+	@subtitleFont: 				@fontSans;
+	@subtitleColor: 			@colorThemeBase;
+	@subtitleOpacity: 			.8;
+	@subtitleMarginTop: 		0;
+	@subtitleMarginBottom: 		.5em;
+	@subtitleJustify: 			left;
+	@subtitleTracking: 			0;
+
+	@bodyFont: 					@fontSans;
+	@bodyColor: 				#43433f;
+	@bodyMarginTop:  			0;
+	@bodyMarginBottom: 			2em;
+	@bodyIndent: 				1em;
+
+	@linkFont:   				inherit;
+	@linkColor:       			@colorThemeBase;
+	@linkHover:        			lighten(@linkColor, 20%);
+
+}
+
+.paragraphAlt {
+	.paragraphDefault;
+	@supertitleFont: 			@fontSerif;
+	@headerFont: 				@fontSerif;
+	@subtitleFont: 				@fontSerif;
+	@bodyFont: 					@fontSerif;
+	@linkFont:   				inherit;
+}
+
+.paragraphScript {
+	.paragraphDefault;
+	@supertitleFont: 			@fontAlt1;
+	@headerFont: 				@fontAlt1;
+	@subtitleFont: 				@fontAlt1;
+	@bodyFont: 					@fontAlt1;
+	@linkFont:   				inherit;
+
+}
+
+.paragraphInverse {
+	.paragraphDefault;
+
+	@supertitleColor: 			white;
+	@headerColor: 				white;
+	@subtitleColor: 			spin(@colorThemeBase, 180);
+	@bodyColor: 				white;
+	@linkColor:       			spin(@colorThemeBase, 180);
+}
+.paragraphQuote {
+	.paragraphDefault;
+}
+.paragraphTechnical {
+	.paragraphDefault;
+}
+.paragraphSubtitle {
+	.paragraphDefault;
+}
+
+
+/******** Color Palette ***********/
+@colorThemeBase:#a3e3e9;
+@colorThemeAlt: #e9e37b;
+
+
+	/* Optional Color Settings */
+	@colorRed: #F2C2C2;
+	@colorYellow: #FAF489;
+	@colorGreen: #DAF9A2;
+	@colorBlue: #7D8C8B;
+	@colorPurple: #AC88DD;
+
+
+	/* Palette Constructors */
+		/* Complementary colors */
+		@colorCompDarkInverse: darken(@colorCompInverse, 5%);
+		@colorCompInverse: spin(@colorThemeBase, 180);
+		@colorCompLight: lighten(@colorThemeBase, 15%);
+		@colorCompExtraLight: lighten(@colorCompLight, 15%);
+
+		/* Monochromatic colors */
+		@colorMonoExtraLight: lighten(@colorThemeBase, 20%);
+		@colorMonoLight: lighten(@colorThemeBase, 5%);
+		@colorMonoDark: darken(@colorThemeBase, 5%);
+		@colorMonoExtraDark: darken(@colorThemeBase, 20%);
+
+*.paragraphDefault{
+	.paragraphDefault;
+	h1, h2, h3, h4, h5, h6 {
+		font-family: @headerFont;
+		color: @headerColor;
+	}
+	p, ul, li, a {
+		font-family: @bodyFont;
+		color: @bodyColor;
+	}
+}
+
+*.paragraphAlt{
+	.paragraphAlt;
+	h1, h2, h3, h4, h5, h6 {
+		font-family: @headerFont;
+		color: @headerColor;
+	}
+	p, ul, li, a {
+		font-family: @bodyFont;
+		color: @bodyColor;
+	}
+}
+
+* {
+	.paragraphDefault;
+	font-family: @bodyFont;
+}
+
+*.alt{
+	.paragraphAlt;
+	font-family: @bodyFont;
+}

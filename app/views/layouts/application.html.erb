@@ -44,17 +44,8 @@
   function getIDFromForm(){
     var formAction = $('.newBubble #new_item').attr('action');
     var formAction = ""+formAction;
-    var formAction = formAction.reverse();
-    var IDFromForm = "";
-    var start_recording = false;
-    for (var i = 0; i<formAction.length; ++i){
-      if (formAction.charAt(i)=='/')
-        start_recording = true;
-      if (start_recording)
-        IDFromForm = IDFromForm + formAction.charAt(i);
-      if (start_recording && formAction.charAt(i)=='/')
-        start_recording = false;
-    }
+    var IDFromForm = IDFromForm.split('/');
+    var IDFromForm = IDFromForm[1];
     return IDFromForm;
   }
 

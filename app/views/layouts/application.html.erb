@@ -34,11 +34,41 @@
 </body>
 <script>
 
+  function getHashFromURL(){
+    var currentURL = document.URL;
+    var currentURL = ""+currentURL;
+    var currentURL = currentURL.slice(-6,-1);
+    return currentURL;
+  }
+
+  function getIDFromForm(){
+    var formAction = $('.newBubble #new_item').attr('action');
+    var formAction = ""+formAction;
+    var formAction = formAction.reverse();
+    var IDFromForm = "";
+    var start_recording = false;
+    for (var i = 0; i<formAction.length; ++i){
+      if (formAction.charAt(i)=='/')
+        start_recording = true;
+      if (start_recording)
+        IDFromForm = IDFromForm + formAction.charAt(i);
+      if (start_recording && formAction.charAt(i)=='/')
+        start_recording = false;
+    }
+    return IDFromForm;
+  }
+  
+  $(function(){
+    //alert("asdf");
+    var value = getIDFromForm();
+    alert(value);
+  });
+/*
 
   	function currentIDTest(){
   		var currentID = document.URL;
   		var currentID = ""+currentID;
-  		var currentID = currentID.slice(-2,-1);
+  		var currentID = currentID.slice(-6,-1);
   		return currentID;
   	}
 
@@ -47,7 +77,7 @@
   	}
 
   	function createAndRedirect(){
-  		var newLink = $.get("/bubbles/" + currentID() + "/links/new", function(data){
+  		var newLink = $.get("/bubbles/" + currentIDTest() + "/links/new", function(data){
 				window.location = "http://bubbl.io/"+data;
 			}).done(function(){
 			}).fail(function(){
@@ -67,7 +97,7 @@
       return String(ID_value);
     }
 	function generateLink(){
-		var newLink = $.get("/bubbles/" + getBubbleID() + " /links/new", function(data){
+		var newLink = $.get("/bubbles/" + currentIDTest() + " /links/new", function(data){
 				switchButton($(".introBlock .textcenter h1"), "http://bubbl.io/"+data);
 			}).done(function(){
 			}).fail(function(){
@@ -84,6 +114,7 @@
   		$(".newBubble form").change(function(){
   			createAndRedirect();
   		})
+*/
 
   		/*var copy_link = generateLink();
    		$("#linkGen").zclip({
@@ -96,7 +127,7 @@
 		 	afterCopy:function(){
 		 		alert("aftercopy");
 		 	}*/
-	});
+	//});
 
   	
 

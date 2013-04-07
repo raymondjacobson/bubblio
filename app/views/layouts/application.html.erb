@@ -35,11 +35,18 @@
 <script>
 
 	$(function(){
-		// $(".newBubble form").change(function(){
-		// 	getBubbleHash(getIDFromForm($(".newBubble")));
-		// });
+		$("#linkGen").click(function(){
+			var jqxhr = 
+				$.get("/bubbles/"+getIDFromForm(".dropZone form")+"/links/new", function(data){
+				}).success(function(){
 
-		alert($(""))
+				}).fail(function(){
+
+				}).always(function(data){
+					switchContent($(".introBlock h1"), constructURL(data));
+				});
+		})
+
   	});
 
   function getHashFromURL(){
@@ -49,8 +56,9 @@
     return currentURL;
   }
 
+
   function getIDFromForm(form){
-    return form.find('#new_item').attr('action').split('/')[2];
+    return $(form).attr('action').split('/')[2];
   }
 
 
@@ -66,23 +74,27 @@
   }
 
   	function getBubbleHash(id){
-  		// var jqxhr = 
-  		// 	$.get("/bubbles/"+id+"/links/new", function(data){
-  					
-	  	// 		}).success(function(data){
-	  	// 			console.log("Success");
-	  	// 		}).fail(function(){
-	  	// 			console.log("Failure");
-	  	// 		}).always(function(data){
-	  	// 			console.log("Always")
-	  	// 			redirectTo(constructURL(data));
-	  	// 		})
+  		console.log(id);
+  		var jqxhr = 
+  			$.get("/bubbles/"+id+"/links/new", function(data){
+	  			}).success(function(data){
+	  				console.log("Success");
+	  			}).fail(function(){
+	  				console.log("Failure");
+	  			}).always(function(data){
+	  				console.log(data);
+	  				console.log("Always")
+	  				$("#hidden_field").val(constructURL(data));
+	  				console.log($("#hidden_field").val());
+		  			manualSubmit();
+	  			});
   	}
 
 
 	function constructURL(hash){
 		return "/"+hash;
 	}
+
 
 	function redirectTo(url){
 		window.location = url;

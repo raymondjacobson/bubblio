@@ -11,6 +11,8 @@ module ItemsHelper
 		return ext.reverse
 	end
 	def getFileName(value)
+		max_length = 14
+		pass_ext = false
 		name = ""
 		value.reverse.split("").each do |i|
 			if value[i]=="/"
@@ -19,7 +21,11 @@ module ItemsHelper
 				name = name + value[i]
 			end
 		end
-		return name.reverse
+		name = name.reverse
+		if name.length > max_length
+			name = name[0,max_length] + "..."
+		end
+		return name
 	end
 	def generate_hash(value) #NEEDS WORK STILL
 		randvalue = ((('a'..'z').to_a + ('0'..'9').to_a).shuffle)[0..4].join

@@ -7,12 +7,7 @@ class LinksController < ApplicationController
       @link.link_hash = generate_hash(bubble_id)
       @link.accessed_at = Time.new.inspect
       format.json { render :json => @link.link_hash.to_json }
-      # render @link.id.to_s
-      if @link.save
-        redirect_to :back
-      else
-        render 'new'
-      end
+      @link.save
     end
   end
 

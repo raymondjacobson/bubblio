@@ -7,7 +7,7 @@ class BubblesController < ApplicationController
   def show
     @bubbles = Bubble.all
     id = get_real_url(request.url)
-    if id==-1
+    if id==-1 #comment out for deploy
       @bubble = Bubble.find(params[:id])
     else
   	  @bubble = Bubble.find(id)
@@ -34,4 +34,17 @@ class BubblesController < ApplicationController
     redirect_to root_path
   end
 
+  def getID(hash_value)
+    @bubbles = Bubble.all
+    @bubbles.each do |bubble|
+      bubble.links.each do |link|
+        if link.link_hash == url_hash
+          id = bubble.id
+        end
+      end
+    end
+    respond_to do |format|
+      format.json { render :json => id.to_json }
+    end
+  end
 end

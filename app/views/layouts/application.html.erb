@@ -39,7 +39,7 @@
   	function currentID(){
   		var currentID = document.URL;
   		var currentID = ""+currentID;
-  		var currentID = currentID.slice(-5,currentID.length);
+  		var currentID = currentID.slice(-6,currentID.length);
   		return currentID;
   	}
 
@@ -63,9 +63,19 @@
 			});
   	}
 
-
+    function getBubbleID(){
+      var ID_value;
+      var bubbleID = $.get("/bubbles/getID", function(data){
+        ID_value = data;
+      }).done(function(){
+      }).fail(function(){
+      }).always(function(data){ 
+      });
+      console.log(ID_value);
+      return String(ID_value);
+    }
 	function generateLink(){
-		var newLink = $.get("/bubbles/" + currentIDTest() + " /links/new", function(data){
+		var newLink = $.get("/bubbles/" + getBubbleID() + " /links/new", function(data){
 				switchButton($(".introBlock .textcenter h1"), "http://bubbl.io/"+data);
 			}).done(function(){
 			}).fail(function(){

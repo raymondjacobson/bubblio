@@ -18,9 +18,11 @@ Bubblio::Application.routes.draw do
 
   # get "links/show"
 
+  get "bubbles/getID"
+
   get "bubbles/new"
 
-  get "bubbles/show"
+  # get "bubbles/show"
 
   get "bubbles/create"
 
@@ -30,11 +32,15 @@ Bubblio::Application.routes.draw do
 
   get "pages/what"
 
+  #map.connect "bubbles/:action", :controller => 'bubbles', :action => /[a-z]+/i
+
   resources :bubbles do
     resources :items
     resources :links
   end
   
+ 
+
   # Routes for hashed URL
   match '/*path', to: 'bubbles#show'
   

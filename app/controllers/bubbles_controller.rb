@@ -38,7 +38,8 @@ class BubblesController < ApplicationController
     redirect_to root_path
   end
 
-  def getID(hash_value)
+  def getID
+    url_hash = params[:hash]
     @bubbles = Bubble.all
     @bubbles.each do |bubble|
       bubble.links.each do |link|

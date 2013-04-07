@@ -5,8 +5,9 @@
 			<%= image_tag("../assets/icons/placeholder.png") %>
 			<h4 class="fileName"><%= file %></h4>
 			<p class="fileDate"><%= item.created_at %></p>
-			<%= link_to "Drop", bubble_item_path(@bubble, item), :confirm => 'Are you sure?', method: :delete %>
 			<%= link_to "Download", file %>
+			<%= button_to "Drop", bubble_item_path(@bubble, item), :confirm => 'Are you sure?', method: :delete %>
+			
 		</div>		
 	<%# end %>			
 </li>

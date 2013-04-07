@@ -20,8 +20,8 @@ URL: emberi.co
 *.paragraphDefault h4,
 *.paragraphDefault h5,
 *.paragraphDefault h6 {
-  font-family: "Noto Serif", Georgia, Times New Roman, serif;
-  color: #43433f;
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+  color: #9a7aa6;
 }
 *.paragraphDefault p,
 *.paragraphDefault ul,
@@ -36,21 +36,21 @@ URL: emberi.co
 *.paragraphAlt h4,
 *.paragraphAlt h5,
 *.paragraphAlt h6 {
-  font-family: "Noto Serif", Georgia, Times New Roman, serif;
-  color: #43433f;
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+  color: #9a7aa6;
 }
 *.paragraphAlt p,
 *.paragraphAlt ul,
 *.paragraphAlt li,
 *.paragraphAlt a {
-  font-family: "Noto Serif", Georgia, Times New Roman, serif;
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
   color: #43433f;
 }
 * {
   font-family: "Noto Sans", Helvetica, Arial, sans-serif;
 }
 *.alt {
-  font-family: "Noto Serif", Georgia, Times New Roman, serif;
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
 }
 /**************************************************
 THEME CONTROLLER by EMBERI CO.
@@ -74,8 +74,8 @@ URL: emberi.co
 *.paragraphDefault h4,
 *.paragraphDefault h5,
 *.paragraphDefault h6 {
-  font-family: "Noto Serif", Georgia, Times New Roman, serif;
-  color: #43433f;
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+  color: #9a7aa6;
 }
 *.paragraphDefault p,
 *.paragraphDefault ul,
@@ -90,21 +90,21 @@ URL: emberi.co
 *.paragraphAlt h4,
 *.paragraphAlt h5,
 *.paragraphAlt h6 {
-  font-family: "Noto Serif", Georgia, Times New Roman, serif;
-  color: #43433f;
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+  color: #9a7aa6;
 }
 *.paragraphAlt p,
 *.paragraphAlt ul,
 *.paragraphAlt li,
 *.paragraphAlt a {
-  font-family: "Noto Serif", Georgia, Times New Roman, serif;
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
   color: #43433f;
 }
 * {
   font-family: "Noto Sans", Helvetica, Arial, sans-serif;
 }
 *.alt {
-  font-family: "Noto Serif", Georgia, Times New Roman, serif;
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
 }
 /**************************************************
 LESS GRID
@@ -262,7 +262,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Noto Serif", Georgia, Times New Roman, serif;
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
   line-height: 110%;
   margin-bottom: 1.6em;
   font-weight: normal;
@@ -283,13 +283,13 @@ h3.alt,
 h4.alt,
 h5.alt,
 h6.alt {
-  font-family: "Noto Serif", Georgia, Times New Roman, serif;
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
 }
 p.alt,
 ul.alt,
 span.alt,
 a.alt {
-  font-family: "Noto Serif", Georgia, Times New Roman, serif;
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
 }
 h1.script,
 h2.script,
@@ -348,7 +348,7 @@ p {
   color: #a3e3e9;
 }
 .subtitle.alt {
-  font-family: "Noto Serif", Georgia, Times New Roman, serif;
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
   color: #a3e3e9;
 }
 h1 + .subtitle,
@@ -366,7 +366,7 @@ h2 + .subtitle {
   margin-bottom: 2em;
 }
 .supertitle.alt {
-  font-family: "Noto Serif", Georgia, Times New Roman, serif;
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
   color: #43433f;
   margin-bottom: -1.5em;
   text-transform: uppercase;
@@ -670,61 +670,203 @@ img.icon {
 .invert {
   color: white;
 }
+.opacity1 {
+  opacity: .1;
+}
+.opacity2 {
+  opacity: .2;
+}
+.opacity3 {
+  opacity: .3;
+}
+.opacity4 {
+  opacity: .4;
+}
+.opacity5 {
+  opacity: .5;
+}
+.opacity6 {
+  opacity: .6;
+}
+.opacity7 {
+  opacity: .7;
+}
+.opacity8 {
+  opacity: .8;
+}
+.opacity9 {
+  opacity: .9;
+}
 /*******************************
 CORRECTIONS and CUSTOM STYLES
 ********************************/
+p a {
+  color: #e9565b;
+  transition: opacity 100ms;
+}
+p a:hover {
+  opacity: .7;
+}
 body {
   background-color: #e9edec;
 }
-header .logo {
-  width: 300px;
-  height: 20px;
-  border: 1px solid red;
-  background: #000000 url('assets/logo.png') left center contain;
+header {
+  height: 40px;
+  padding-bottom: 2em;
+  background: #cdd6d4 url('../assets/logo.png') center center no-repeat;
+  margin-bottom: 65px !important;
 }
-header .step {
-  display: inline;
+header .logo {
+  background: #cdd6d4 url('../assets/logo.png') center center no-repeat;
+}
+header .step * {
+  display: inline-block;
 }
 header .step .stepNumber {
   text-align: center;
-  padding: 8px;
-  height: 0px;
-  width: 0px;
+  height: 16px;
+  width: 16px;
+  color: #999999;
   background-color: black;
-  vertical-align: middle;
-  margin-right: 15px;
-  border-radius: 8px;
+  vertical-align: baseline;
+  border-radius: 16px;
 }
 header .step .stepName {
   text-transform: uppercase;
 }
+.emphasis {
+  opacity: .8;
+}
 .file {
+  width: 128px;
+  display: inline-block;
+  margin-right: 50px;
   transition: opacity 100ms;
 }
 .file:hover {
-  opacity: .7;
+  opacity: .6;
 }
 .file .fileBox {
   position: relative;
-  width: 200px;
-  height: 220px;
-  transition: height 50ms;
-  padding: 10px;
-}
-.file .fileBox:hover {
-  height: 300px;
 }
 .file .fileBox img {
-  width: 150px;
-  height: 200px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 128px;
+  margin-bottom: 10px;
 }
-.file .fileBox h3 {
+.file .fileBox .fileRemove {
+  position: absolute;
+  left: 0;
+  top: 108px;
+  border-radius: 10px;
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  color: white;
+  padding: 2px 2px 1px 2px;
+}
+.file .fileBox .fileName {
+  text-align: center;
+  margin-bottom: -8px;
+}
+.file .fileBox .fileDate {
+  font-size: .55em;
   font-weight: bold;
-  color: black;
-}
-.file .fileBox h6 {
-  color: black;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   opacity: .7;
+  color: #e9615a;
+}
+.btn {
+  display: inline;
+  padding: 8px 12px 8px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size: .6em;
+  transition: opacity 150ms;
+  vertical-align: middle;
+}
+.btn:hover {
+  cursor: pointer;
+  opacity: .5;
+}
+.btn.red {
+  border: 2px solid #e9615a;
+  color: #e9615a;
+}
+.btn.green {
+  border: 2px solid #87b571;
+  color: #87b571;
+}
+.introBlock {
+  margin: 20px auto 50px auto;
+  padding-bottom: 10px;
+}
+.introBlock h1 {
+  margin-bottom: 0;
+}
+.dropZone {
+  min-height: 800px;
+  background-color: white;
+  border: 1px solid #e9e6de;
+}
+.dropZone ul {
+  list-style: none;
+}
+.dropZone ul li {
+  display: inline-block;
+}
+.dropZone input[type="text"] {
+  text-align: center;
+  border: 1px solid #d7dcd2;
+  border-radius: 7px;
+  font-size: .7em;
+  width: 100%;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 5px 8px 5px 8px;
+}
+.dropZone .or {
+  font-family: "Georgia", serif;
+  font-style: italic;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  padding-top: 20px;
+  background-color: #e9615a;
+  height: 80px;
+}
+footer a {
+  color: white;
+  font-weight: bold;
+  margin-left: 50px;
+  font-size: .6em;
+  background-color: #e9615a;
+  border-radius: 3px;
+  padding: 10px;
+  transition: background-color 100ms;
+}
+footer a:hover {
+  background-color: #c3221a;
+}
+footer a:first-child {
+  margin-left: 0;
+}
+.team img {
+  height: 150px;
+}
+.term {
+  margin-bottom: 50px;
+}
+form#new_item p {
+  position: relative;
+}
+form#new_item p #choose_file {
+  width: 100%;
+  height: 100%;
 }

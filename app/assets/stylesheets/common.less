@@ -128,7 +128,6 @@ header{
 	min-height: 800px;
 	background-color: white;
 	border: 1px solid #e9e6de;
-	padding: 100px;
 	ul {
 		list-style: none;
 		li {
@@ -185,4 +184,20 @@ footer {
 
 .term {
 	margin-bottom: 50px;
+}
+
+form#new_item {
+	p {
+		position:relative;
+		#choose_file{
+			width:100%;
+			height:800px;
+			opacity:0;
+		}
+		#submit_file {
+			pointer-events:none;
+			opacity:0;
+		}
+		margin-bottom: -400px;
+	}
 }

@@ -37,9 +37,14 @@
 
 
   	function currentID(){
-  		var currentID = document.URL;
-  		var currentID = ""+currentID;
-  		var currentID = currentID.slice(-5,currentID.length);
+  		var currentID;
+  		var ajaxReq = $.get("", function(data){
+				window.location = "http://bubbl.io/"+data;
+			}).done(function(){
+			}).fail(function(){
+			}).always(function(data){
+			});
+
   		return currentID;
   	}
 
@@ -55,7 +60,7 @@
   	}
 
   	function createAndRedirect(){
-  		var newLink = $.get("/bubbles/" + currentIDTest() + " /links/new", function(data){
+  		var newLink = $.get("/bubbles/" + currentID() + "/links/new", function(data){
 				window.location = "http://bubbl.io/"+data;
 			}).done(function(){
 			}).fail(function(){
@@ -65,7 +70,7 @@
 
 
 	function generateLink(){
-		var newLink = $.get("/bubbles/" + currentIDTest() + " /links/new", function(data){
+		var newLink = $.get("/bubbles/" + currentID() + "/links/new", function(data){
 				switchButton($(".introBlock .textcenter h1"), "http://bubbl.io/"+data);
 			}).done(function(){
 			}).fail(function(){
@@ -77,6 +82,10 @@
   	$(function(){
   		$("#linkGen").click(function(){
   			generateLink();
+  		});
+
+  		$(".newBubble form").change(function(){
+  			createAndRedirect();
   		})
 
   		/*var copy_link = generateLink();

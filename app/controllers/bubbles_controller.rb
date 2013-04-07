@@ -1,7 +1,11 @@
 class BubblesController < ApplicationController
   #before_filter :get_real_url
   def new
-  	@bubble = Bubble.new
+    @bubble = Bubble.new(params[:bubble])
+    @bubble.save
+    @items = @bubble.items.order("happened_at DESC")
+    @item = @items.build
+
   end
 
   def show

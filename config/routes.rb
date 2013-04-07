@@ -34,9 +34,11 @@ Bubblio::Application.routes.draw do
     resources :items
     resources :links
   end
-
-
-  match 'b/1xib0', to: 'bubbles#show'
+  #resources :bubbles
+  #resources :items
+  #resources :links
+  # Routes for hashed URL
+  match '/*path', to: 'bubbles#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

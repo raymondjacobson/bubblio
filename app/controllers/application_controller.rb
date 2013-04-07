@@ -19,9 +19,9 @@ class ApplicationController < ActionController::Base
 
 	def ensure_random(value)
 		@bubbles = Bubble.find(:all)
-		@bubbles.each do |i|
-			i.links.each do |j|
-				if j.link_hash == value
+		@bubbles.each do |bubble|
+			bubble.links.each do |link|
+				if link.link_hash == value
 					return false
 				end
 			end
@@ -29,5 +29,16 @@ class ApplicationController < ActionController::Base
 		return true
 	end
 
-
+	def get_real_url(current_url)
+		id = -1
+		url_hash = current_url[-5,5]
+		@bubbles.each do |bubble|
+			bubble.links.each do |link|
+				if link.link_hash == url_hash
+					id = bubble.id
+				end
+			end
+		end
+		return id
+	end
 end

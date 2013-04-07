@@ -15,7 +15,7 @@ class LinksController < ApplicationController
     @link.accessed_at = Time.new.inspect
   	if @link.save
       flash[:success] = "Link generated!"
-      redirect_to bubble_path(@bubble)
+      redirect_to :back
     else
       render 'new'
     end
@@ -24,7 +24,7 @@ class LinksController < ApplicationController
   def destroy
     @link = @bubble.links.find(params[:id])
     @link.destroy
-    redirect_to bubble_path(@bubble)
+    redirect_to :back
   end
 
  

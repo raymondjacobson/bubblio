@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
   	@item = @bubble.items.new(params[:item])
   	if @item.save
       flash[:success] = "Item uploaded!"
-      redirect_to bubble_path(@bubble)
+      redirect_to :back
     else
       render 'new'
     end
@@ -25,6 +25,6 @@ class ItemsController < ApplicationController
   def destroy
     @item = @bubble.items.find(params[:id])
     @item.destroy
-    redirect_to bubble_path(@bubble)
+    redirect_to :back
   end
 end

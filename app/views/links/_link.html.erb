@@ -1,1 +1,5 @@
-<p><%=link.link_hash%> with ID: <%=link.id%> accessed at <%=link.accessed_at%></p>
+<p><%=link.link_hash%> with ID: <%=link.id%> accessed at <%=link.accessed_at%>
+<% if Rails.env.development? %>
+	<%= link_to "Drop", bubble_link_path(@bubble, link), method: :delete %>
+<% end %>
+</p>

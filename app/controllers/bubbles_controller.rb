@@ -1,12 +1,21 @@
 class BubblesController < ApplicationController
+  #before_filter :get_real_url
   def new
   	@bubble = Bubble.new
   end
 
   def show
-  	@bubble = Bubble.find(params[:id])
+    @bubbles = Bubble.all
+    id = get_real_url(request.url)
+    #if id==-1
+    #  @bubble = Bubble.find(params[:id])
+    #else
+  	  @bubble = Bubble.find(id)
+    #end
     @items = @bubble.items.order("happened_at DESC")
+    @item = @items.build
     @links = @bubble.links.order("happened_at DESC")
+    @link = @links.build
   end
 
   def create

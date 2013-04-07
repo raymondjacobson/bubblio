@@ -41,8 +41,8 @@
     return currentURL;
   }
 
-  function getIDFromForm(){
-    var formAction = $('.newBubble #new_item').attr('action');
+  function getIDFromForm(form){
+    var formAction = form.find('#new_item').attr('action');
     var formAction = ""+formAction;
     var IDFromForm = IDFromForm.split('/');
     var IDFromForm = IDFromForm[1];

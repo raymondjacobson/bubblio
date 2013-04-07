@@ -86,8 +86,14 @@
 	  				console.log("Always")
 	  				$("#hidden_field").val(constructURL(data));
 	  				console.log($("#hidden_field").val());
+	  				printBubble($("#hidden_field").val());
 		  			manualSubmit();
 	  			});
+  	}
+
+  	function printBubble(hash){
+  		$(".introBlock h1").html(hash);
+  		$(".introBlock .btn").attr("href","/"+hash).html("CATCH YOUR NEW BUBBL");
   	}
 
 

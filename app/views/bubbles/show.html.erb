@@ -4,10 +4,11 @@
 <%#= render 'items/form' %>
 <%#= render 'links/form' %>
 <%#= render @bubble.links %>
+
 <div class="row introBlock">
 	<div class="col_2">&nbsp;</div>
 	<div class="col_8 textcenter">
-		<h1 class="alt" style="margin-bottom:0;"><%= @bubble.title %></h1>
+		<h1 class="alt" style="margin-bottom:0;"></h1>
 		<br>
 		<a href="#" class="btn green" id="linkGen">Get New Link</a>
 	</div>
@@ -20,5 +21,14 @@
 			<%= render @bubble.items %>
 		<% end %>
 	</ul>
-	<%= render @bubble.links %>
+	<%#= render @bubble.links %>
 </div>
+<script>
+	var url = document.URL;
+	if url[url.length]=="#"{
+		url = url;
+	}else {
+		url = url+"#";
+	}
+	$(".introBlock h1").html("/"+url.slice(-6, url.length-1));
+</script>

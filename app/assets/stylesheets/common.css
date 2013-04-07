@@ -740,8 +740,11 @@ header .step .stepName {
 .file {
   width: 128px;
   display: inline-block;
-  margin-right: 50px;
+  margin-left: 50px;
   transition: opacity 100ms;
+}
+.file:first-child {
+  margin-left:0;
 }
 .file:hover {
   opacity: .6;
@@ -811,6 +814,7 @@ header .step .stepName {
   min-height: 800px;
   background-color: white;
   border: 1px solid #e9e6de;
+  padding: 100px;
 }
 .dropZone ul {
   list-style: none;
@@ -875,4 +879,18 @@ form#new_item p #choose_file {
 form#new_item p #submit_file {
   pointer-events: none;
   opacity: 0;
+}
+
+input[value="Drop"] {
+  width:50%;
+  color:white;
+  background-color: #dc3c37;
+  font-weight: bold;
+  font-size: .5em;
+  opacity:0;
+  transition: opacity 100ms;
+  -webkit-transition: opacity 100ms;
+}
+input[value="Drop"]:hover {
+  opacity:1;
 }

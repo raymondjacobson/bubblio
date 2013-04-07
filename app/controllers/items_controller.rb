@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-  	@item = @bubble.items.new(:file => params[:item])
+  	@item = @bubble.items.new(params[:item])
   	if @item.save
       flash[:success] = "Item uploaded!"
       redirect_to :back

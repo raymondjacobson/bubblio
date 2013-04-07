@@ -19,6 +19,7 @@ class LinksController < ApplicationController
     else
       render 'new'
     end
+    return @link.link_hash
   end
 
   def destroy

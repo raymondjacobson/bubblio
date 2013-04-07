@@ -1,4 +1,11 @@
 Bubblio::Application.routes.draw do
+
+  root to: "bubbles#new"
+
+  match '/team', to: "pages#team"
+  match '/terms', to: "pages#terms"
+  match '/what', to: "pages#what"
+
   get "items/new"
 
   get "items/show"
@@ -7,13 +14,15 @@ Bubblio::Application.routes.draw do
 
   get "links/new"
 
-  get "links/show"
-
   get "links/create"
+
+  # get "links/show"
+
+  get "bubbles/getID"
 
   get "bubbles/new"
 
-  get "bubbles/show"
+  # get "bubbles/show"
 
   get "bubbles/create"
 
@@ -22,6 +31,20 @@ Bubblio::Application.routes.draw do
   get "pages/terms"
 
   get "pages/what"
+
+  #map.connect "bubbles/:action", :controller => 'bubbles', :action => /[a-z]+/i
+
+  resources :bubbles do
+    resources :items
+    resources :links
+  end
+  
+ 
+
+  # Routes for hashed URL
+  match '/*path', to: 'bubbles#show'
+  
+  match '/ZeroClipboard', to: "public#ZeroClipboard.swf"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

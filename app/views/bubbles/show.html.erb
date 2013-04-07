@@ -1,2 +1,24 @@
-<h1>Bubbles#show</h1>
-<p>Find me in app/views/bubbles/show.html.erb</p>
+<%#KILL ALL EXPIRED LINKS %>
+<%# cleanLinks(@bubble) %>
+
+<%#= render 'items/form' %>
+<%#= render 'links/form' %>
+<%#= render @bubble.links %>
+<div class="row introBlock">
+	<div class="col_2">&nbsp;</div>
+	<div class="col_8 textcenter">
+		<h1 class="alt" style="margin-bottom:0;"><%= @bubble.title %></h1>
+		<br>
+		<a href="#" class="btn green" id="linkGen">Get New Link</a>
+	</div>
+	<div class="col_2 last">&nbsp;</div>
+</div>
+<div class="row dropZone textcenter">
+	<%= render 'items/form' %>
+	<ul>
+		<% if @bubble.items.any? %>
+			<%= render @bubble.items %>
+		<% end %>
+	</ul>
+	<%= render @bubble.links %>
+</div>

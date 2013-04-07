@@ -1,0 +1,22 @@
+<%= form_for [@bubble, @item], :method => 'post', :html => {:multipart => true} do |f| %>
+	<p>
+		<%= f.file_field :file, :id=>'choose_file' %>
+	</p>
+	<% hash = generate_hash(@bubble.id) %>
+	<input type="hidden" value= id="hidden_field" />
+	<p><%= f.submit nil, :name=>hash, :id=>'submit_file' %></p>
+<% end %>
+<script>
+  var file = document.getElementById('choose_file');
+  var submit = document.getElementById('submit_file');
+  file.onchange = function(){
+  		getBubbleHash(getIDFromForm(this.form));
+  };
+
+  function manualSubmit(){
+  	file.form.submit();
+  	console.log("uploaded");
+  };
+
+
+ </script>

@@ -11,11 +11,11 @@ class BubblesController < ApplicationController
   def show
     @bubbles = Bubble.all
     id = get_real_url(request.url)
-    if id==-1 #comment out for deploy
-      @bubble = Bubble.find(params[:id])
-    else
+    #if id==-1 #comment out for deploy
+    #  @bubble = Bubble.find(params[:id])
+    #else
   	  @bubble = Bubble.find(id)
-    end
+    #end
     @items = @bubble.items.order("happened_at DESC")
     @item = @items.build
     @links = @bubble.links.order("happened_at DESC")

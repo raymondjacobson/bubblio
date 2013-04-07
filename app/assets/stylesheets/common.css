@@ -813,6 +813,9 @@ header .step .stepName {
   background-color: white;
   border: 1px solid #e9e6de;
 }
+.dropZone > h6 {
+  pointer-events:none;
+}
 .dropZone ul {
   list-style: none;
 }

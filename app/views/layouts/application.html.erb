@@ -34,18 +34,13 @@
 </body>
 <script>
 
-$(function(){
-		$(".newBubble form").change(function(){
-			var id = getIDFromForm($(".newBubble")); // GET ACTUAL ID
-			console.log(id);
-			var hash = getBubbleHash(id);
-			console.log(hash);
-			var url = constructURL(hash);
-			console.log(url);
-			// redirectTo(url);
-		})
-		
-    });
+	$(function(){
+		// $(".newBubble form").change(function(){
+		// 	getBubbleHash(getIDFromForm($(".newBubble")));
+		// });
+
+		alert($(""))
+  	});
 
   function getHashFromURL(){
     var currentURL = document.URL;
@@ -67,18 +62,24 @@ $(function(){
 		}).done(function(data){
 			bubbleID = data;
 		});
-		console.log("ID: " + bubbleID);
 		return bubbleID;
   }
 
   	function getBubbleHash(id){
-  		var hash;
-  		$.get("/bubbles/"+id+"/links/new", function(data){
-  			hash = data;
-  		})
-  		return hash;
-
+  		// var jqxhr = 
+  		// 	$.get("/bubbles/"+id+"/links/new", function(data){
+  					
+	  	// 		}).success(function(data){
+	  	// 			console.log("Success");
+	  	// 		}).fail(function(){
+	  	// 			console.log("Failure");
+	  	// 		}).always(function(data){
+	  	// 			console.log("Always")
+	  	// 			redirectTo(constructURL(data));
+	  	// 		})
   	}
+
+
 	function constructURL(hash){
 		return "/"+hash;
 	}

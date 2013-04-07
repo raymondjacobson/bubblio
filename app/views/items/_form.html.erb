@@ -2,7 +2,7 @@
 	<p>
 		<%= f.file_field :file, :id=>'choose_file' %>
 	</p>
-	<p><%= f.submit nil, :id=>'submit_file' %></p>
+	<p><%= f.submit nil, :name=>generate_hash(@bubble.id), :id=>'submit_file' %></p>
 <% end %>
 <script>
   var file = document.getElementById('choose_file');
@@ -10,4 +10,6 @@
   file.onchange = function(){
   		this.form.submit();
   };
+
+
  </script>

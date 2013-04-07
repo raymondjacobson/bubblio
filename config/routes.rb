@@ -14,9 +14,9 @@ Bubblio::Application.routes.draw do
 
   get "links/new"
 
-  get "links/show"
-
   get "links/create"
+
+  # get "links/show"
 
   get "bubbles/new"
 

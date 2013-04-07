@@ -9,48 +9,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
   <%= javascript_include_tag "dropzone.min" %>
 	<%= javascript_include_tag "zClip" %>
-  <script>
-
-
-
-
-	function generateLink(){
-		// call and return RoR linkGen result
-        // should return string '438dj'
-	}
-
-
-  	$(function(){
-
-  		$(".dropzone").dropzone({url:"bubbles/show"})
-	  	$(".dropzone ul").sortable();
-	  	$(".dropzone ul").disableSelection();  		
-	  	$("#linkGen").zclip({
-  			path: "../../../ZeroClipboard.swf",
-  			copy: "blahblah",
-  			beforeCopy:function(){
-  			},
-  			afterCopy:function(){
-  				$("#linkGen").html('LINK IS COPIED TO YOUR CLIPBOARD');
-  				
-  			}
-  		});
-  		Dropzone.options.uploadArea = {
-		  paramName: "file",
-		  dictDefaultMessage: "blah",
-		  maxFilesize: 25, // MB
-		  accept: function(file, done) {
-		  	alert("Uploaded");
-		  	window.location = "/"+generateLink();
-		  }
-		};
-
-  	});
-
-
-  	
-
-  </script>
+  
 </head>
 <body>
 	<header class="row logo fullwidth"> &nbsp;
@@ -73,4 +32,59 @@
 		</div>
 	</footer>
 </body>
+<script>
+
+
+
+  	function currentID(){
+  		var currentID = document.URL;
+  		var currentID = ""+currentID;
+  		var currentID = currentID.slice(-5,currentID.length);
+  		return currentID;
+  	}
+
+  	function currentIDTest(){
+  		var currentID = document.URL;
+  		var currentID = ""+currentID;
+  		var currentID = currentID.slice(-2,-1);
+  		return currentID;
+  	}
+
+  	function switchButton(element, string){
+  		element.html(string);
+  		return string;
+  	}
+
+
+	function generateLink(){
+		var newLink = $.get("/bubbles/" + currentIDTest() + " /links/new", function(data){
+				switchButton($(".introBlock .textcenter h1"), "http://bubbl.io/"+data);
+			}).done(function(){
+			}).fail(function(){
+			}).always(function(data){
+			});
+	}
+
+
+  	$(function(){
+  		$("#linkGen").click(function(){
+  			generateLink();
+  		})
+
+  		/*var copy_link = generateLink();
+   		$("#linkGen").zclip({
+		 	path: "../../../ZeroClipboard.swf",
+		 	copy: copy_link,
+		 	beforeCopy:function(){
+		 		$(this).html("LINK IS COPIED TO YOUR CLIPBOARD")
+		 		alert("beforecopy");
+		 	},
+		 	afterCopy:function(){
+		 		alert("aftercopy");
+		 	}*/
+	});
+
+  	
+
+  </script>
 </html>

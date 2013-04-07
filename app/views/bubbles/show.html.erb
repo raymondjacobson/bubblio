@@ -1,13 +1,22 @@
 <%#KILL ALL EXPIRED LINKS %>
 <% cleanLinks(@bubble) %>
 
-<% provide(:title, @bubble.title) %>
-<p>This is bubble of title <%= @bubble.title%></p>
-<%= render 'items/form' %>
-<% if @bubble.items.any? %>
-	<%= render @bubble.items %>
-<% else %>
-	<p>No files uploaded yet</p>
-<% end %>
-<%= render 'links/form' %>
-<%= render @bubble.links %>
+<%#= render 'items/form' %>
+<%#= render 'links/form' %>
+<%#= render @bubble.links %>
+<div class="row introBlock">
+	<div class="col_2">&nbsp;</div>
+	<div class="col_8 textcenter">
+		<h1 class="alt" style="margin-bottom:0;">Data Structures Homework</h1>
+		<br>
+		<a href="#" class="btn green" id="linkGen">Make &amp; Copy New Link</a>
+	</div>
+	<div class="col_2 last">&nbsp;</div>
+</div>
+<div class="row dropzone textcenter">
+	<ul>
+		<% if @bubble.items.any? %>
+			<%= render @bubble.items %>
+		<% end %>
+	</ul>
+</div>

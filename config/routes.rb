@@ -39,6 +39,8 @@ Bubblio::Application.routes.draw do
   #resources :links
   # Routes for hashed URL
   match '/*path', to: 'bubbles#show'
+  
+  match '/ZeroClipboard', to: "public#ZeroClipboard.swf"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

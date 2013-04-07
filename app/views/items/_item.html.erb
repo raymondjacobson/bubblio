@@ -1,6 +1,11 @@
-<div>
+<li>
 	<% file = item.file_url.to_s %>
-	<%= link_to file, file %>
-	Of extension <%= getExtension(file) %>
-	<%= link_to "Drop", bubble_item_path(@bubble, item), :confirm => 'Are you sure?', method: :delete %>
-</div>
+	<%= link_to '', file, :class => 'file' do %>
+		<div class="fileBox">
+			<%= image_tag("../assets/icons/placeholder.png") %>
+			<h4 class="fileName"><%= file %></h4>
+			<p class="fileDate"><%= item.created_at %></p>
+			<%= link_to "Drop", bubble_item_path(@bubble, item), :confirm => 'Are you sure?', method: :delete %>
+		</div>		
+	<% end %>			
+</li>

@@ -2,11 +2,63 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag "common" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700|Bree+Serif' rel='stylesheet' type='text/css'>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+  <%= javascript_include_tag "dropzone.min" %>
+	<%= javascript_include_tag "zClip" %>
+  <script>
+
+  $(".dropzone").dropzone({url:"/"})
+
+  	function selectText(element) {
+	    var doc = document
+	        , text = doc.getElementById(element)
+	        , range, selection
+	    ;    
+	    if (doc.body.createTextRange) { //ms
+	        range = doc.body.createTextRange();
+	        range.moveToElementText(text);
+	        range.select();
+	    } else if (window.getSelection) { //all others
+	        selection = window.getSelection();        
+	        range = doc.createRange();
+	        range.selectNodeContents(text);
+	        selection.removeAllRanges();
+	        selection.addRange(range);
+	    }
+	}
+
+
+  	$(function(){
+	  	$(".dropzone ul").sortable();
+	  	$(".dropzone ul").disableSelection();  		
+	  	$("#linkGen").click().zclip({
+  			path: "../../../ZeroClipboard.swf",
+  			copy: "blahblah",
+  			beforeCopy:function(){
+  			},
+  			afterCopy:function(){
+  				$("#linkGen").html('LINK IS COPIED TO YOUR CLIPBOARD');
+  				
+  			}
+  		});
+  	});
+
+
+  	
+
+  </script>
 </head>
 <body>
+	<header class="row logo fullwidth"> &nbsp;
+		<!-- 
+		<div class="col_3 step"><p class="stepNumber">1</p><span class="stepName">UPLOAD YOUR PROJECT</span></div>
+		<div class="col_3 step"><p class="stepNumber">2</p><span class="stepName">SHARE YOUR BUBBL</span></div>
+		<div class="col_3 step last"><p class="stepNumber">3</p><span class="stepName">COLLABORATE</span></div> -->
+	</header>
 
 <%= yield %>
 
@@ -16,5 +68,12 @@
 	</div>
 <% end %>
 
+	<footer class="row fullwidth">
+		<div class="col_12 textcenter">
+			<a href="team.html">TEAM</a>
+			<a href="terms.html">TERMS</a>
+			<a href="what.html">ABOUT BUBL</a>
+		</div>
+	</footer>
 </body>
 </html>

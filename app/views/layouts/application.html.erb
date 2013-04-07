@@ -34,6 +34,19 @@
 </body>
 <script>
 
+$(function(){
+		$(".newBubble form").change(function(){
+			var id = getIDFromForm($(".newBubble")); // GET ACTUAL ID
+			console.log(id);
+			var hash = getBubbleHash(id);
+			console.log(hash);
+			var url = constructURL(hash);
+			console.log(url);
+			// redirectTo(url);
+		})
+		
+    });
+
   function getHashFromURL(){
     var currentURL = document.URL;
     var currentURL = ""+currentURL;
@@ -42,11 +55,7 @@
   }
 
   function getIDFromForm(form){
-    var formAction = form.find('#new_item').attr('action');
-    var formAction = ""+formAction;
-    var IDFromForm = IDFromForm.split('/');
-    var IDFromForm = IDFromForm[1];
-    return IDFromForm;
+    return form.find('#new_item').attr('action').split('/')[2];
   }
 
 
@@ -58,12 +67,20 @@
 		}).done(function(data){
 			bubbleID = data;
 		});
+		console.log("ID: " + bubbleID);
 		return bubbleID;
   }
 
+  	function getBubbleHash(id){
+  		var hash;
+  		$.get("/bubbles/"+id+"/links/new", function(data){
+  			hash = data;
+  		})
+  		return hash;
+
+  	}
 	function constructURL(hash){
-		var url = "/"+hash;
-		return url;
+		return "/"+hash;
 	}
 
 	function redirectTo(url){
@@ -74,13 +91,11 @@
 		element.html(content);
 	}
 
-	$(function(){
+	function test() {
+		console.log(constructURL(getBubbleHash(getIDFromForm($(".newBubble")))));
+	}
 
-		$(".newBubble form").change(function(){
-			createAndRedirect();
-		})
-		
-  });
+	
 
   	
 

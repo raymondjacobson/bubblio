@@ -13,7 +13,8 @@
 	</div>
 	<div class="col_2 last">&nbsp;</div>
 </div>
-<div class="row dropzone textcenter">
+<div class="row dropZone textcenter">
+	<%= render 'items/form' %>
 	<ul>
 		<% if @bubble.items.any? %>
 			<%= render @bubble.items %>

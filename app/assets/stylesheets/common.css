@@ -746,9 +746,23 @@ header .step .stepName {
 .file:hover {
   opacity: .6;
 }
+.file .fileBox {
+  position: relative;
+}
 .file .fileBox img {
   width: 128px;
   margin-bottom: 10px;
+}
+.file .fileBox .fileRemove {
+  position: absolute;
+  left: 0;
+  top: 108px;
+  border-radius: 10px;
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  color: white;
+  padding: 2px 2px 1px 2px;
 }
 .file .fileBox .fileName {
   text-align: center;
@@ -793,19 +807,19 @@ header .step .stepName {
 .introBlock h1 {
   margin-bottom: 0;
 }
-.dropzone {
+.dropZone {
   min-height: 800px;
   background-color: white;
   border: 1px solid #e9e6de;
   padding: 100px;
 }
-.dropzone ul {
+.dropZone ul {
   list-style: none;
 }
-.dropzone ul li {
+.dropZone ul li {
   display: inline-block;
 }
-.dropzone input[type="text"] {
+.dropZone input[type="text"] {
   text-align: center;
   border: 1px solid #d7dcd2;
   border-radius: 7px;
@@ -815,7 +829,7 @@ header .step .stepName {
   background-color: rgba(0, 0, 0, 0);
   padding: 5px 8px 5px 8px;
 }
-.dropzone .or {
+.dropZone .or {
   font-family: "Georgia", serif;
   font-style: italic;
   margin-top: 20px;
@@ -843,4 +857,10 @@ footer a:hover {
 }
 footer a:first-child {
   margin-left: 0;
+}
+.team img {
+  height: 150px;
+}
+.term {
+  margin-bottom: 50px;
 }

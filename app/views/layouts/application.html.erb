@@ -11,31 +11,21 @@
 	<%= javascript_include_tag "zClip" %>
   <script>
 
-  	$(".dropzone").dropzone({url:""})
 
-  	function selectText(element) {
-	    var doc = document
-	        , text = doc.getElementById(element)
-	        , range, selection
-	    ;    
-	    if (doc.body.createTextRange) { //ms
-	        range = doc.body.createTextRange();
-	        range.moveToElementText(text);
-	        range.select();
-	    } else if (window.getSelection) { //all others
-	        selection = window.getSelection();        
-	        range = doc.createRange();
-	        range.selectNodeContents(text);
-	        selection.removeAllRanges();
-	        selection.addRange(range);
-	    }
+
+
+	function generateLink(){
+		// call and return RoR linkGen result
+        // should return string '438dj'
 	}
 
 
   	$(function(){
+
+  		$(".dropzone").dropzone({url:"pages/team/"})
 	  	$(".dropzone ul").sortable();
 	  	$(".dropzone ul").disableSelection();  		
-	  	$("#linkGen").click().zclip({
+	  	$("#linkGen").zclip({
   			path: "../../../ZeroClipboard.swf",
   			copy: "blahblah",
   			beforeCopy:function(){
@@ -45,6 +35,16 @@
   				
   			}
   		});
+  		Dropzone.options.uploadArea = {
+		  paramName: "file",
+		  dictDefaultMessage: "blah",
+		  maxFilesize: 25, // MB
+		  accept: function(file, done) {
+		  	alert("Uploaded");
+		  	window.location = "/"+generateLink();
+		  }
+		};
+
   	});
 
 
@@ -60,7 +60,7 @@
 
 	<footer class="row fullwidth">
 		<div class="col_12 textcenter">
-			<a href="/">HOME</a>
+			<a href="/bubbles/new/">HOME</a>
 			<a href="/pages/team.html">TEAM</a>
 			<a href="/pages/terms.html">TERMS</a>
 			<a href="/pages/what.html">ABOUT BUBBL</a>

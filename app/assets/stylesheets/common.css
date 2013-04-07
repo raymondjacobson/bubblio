@@ -743,9 +743,6 @@ header .step .stepName {
   margin-left: 50px;
   transition: opacity 100ms;
 }
-.file:first-child {
-  margin-left:0;
-}
 .file:hover {
   opacity: .6;
 }
@@ -769,7 +766,7 @@ header .step .stepName {
 }
 .file .fileBox .fileName {
   text-align: center;
-  margin-bottom: -8px;
+  margin-bottom: -4px;
 }
 .file .fileBox .fileDate {
   font-size: .55em;

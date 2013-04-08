@@ -20,6 +20,7 @@ gem 'bootstrap-sass'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'therubyracer'
   gem 'less-rails'
   gem 'coffee-rails', '~> 3.2.1'
 

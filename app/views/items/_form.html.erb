@@ -1,9 +1,12 @@
-<%= form_for [@bubble, @item], :method => 'post', :html => {:multipart => true} do |f| %>
+<%= form_for [@bubble, @item], :method => 'get', :html => {:multipart => true} do |f| %>
 	<p>
 		<%= f.file_field :file, :id=>'choose_file' %>
 	</p>
-	<% hash = generate_hash(@bubble.id) %>
-	<input type="hidden" value= id="hidden_field" />
+  <%='hash is here:' %>
+	<% hash = @link.link_hash.inspect # = generate_hash(@bubble.id) %>
+  <%=hash %>
+  <%='endhash'%>
+	<input type="hidden" name='hash' value="<%=hash%>" id="hidden_field" />
 	<p><%= f.submit nil, :name=>hash, :id=>'submit_file' %></p>
 <% end %>
 <script>

@@ -5,7 +5,7 @@ class BubblesController < ApplicationController
     @bubble.save
     @items = @bubble.items.order("happened_at DESC")
     @item = @items.build
-
+    @link = @bubble.links.new
   end
 
   def show

@@ -15,9 +15,6 @@
 	<script>
 
 	$(function(){
-		//var stringF = $_POST['hidden_field'];
-		
-		//alert(stringF);
 
 		$("#linkGen").click(function(){
 			var jqxhr = 
@@ -59,9 +56,6 @@
           console.log("Always")
           $("#hidden_field").val(constructURL(data));
           console.log($("#hidden_field").val());
-          //alert('asdf');
-          //alert($("#hidden_field").val());
-          //manualSubmit();
         });
   }
 
@@ -96,16 +90,10 @@
 		console.log(constructURL(getBubbleHash(getIDFromForm($(".newBubble")))));
 	}
 
-	//$('#redirect_link').click();
-
-  	
-
   </script>
 	<header class="row logo fullwidth"> &nbsp;
 	</header>
-<% if Rails.env.development? %>
-<%= debug(params) %>
-<% end %>
+
 <%= yield %>
 
 	<footer class="row fullwidth">

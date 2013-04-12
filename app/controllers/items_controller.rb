@@ -19,11 +19,22 @@ class ItemsController < ApplicationController
 
   def create
   	@item = @bubble.items.new(params[:item])
-  	if @item.save
-      flash[:success] = "Item uploaded!"
-      redirect_to :back
+    url_hash = params[:hash].to_s
+    if url_hash!="" 
+      url = "/" + url_hash
+    	if @item.save
+        flash[:success] = "Item uploaded!"
+        redirect_to url_hash
+      else
+        render 'new'
+      end
     else
-      render 'new'
+      if @item.save
+        flash[:success] = "Item uploaded!"
+        redirect_to :back
+      else
+        render 'new'
+      end
     end
   end
 

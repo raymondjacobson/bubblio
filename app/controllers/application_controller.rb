@@ -10,9 +10,9 @@ class ApplicationController < ActionController::Base
   end
 
 	def generate_hash(value) #NEEDS WORK STILL
-		randvalue = ((('a'..'z').to_a + ('0'..'9').to_a).shuffle)[0..4].join
+		randvalue = ((('a'..'z').to_a + ('0'..'9').to_a).shuffle)[0..5].join
 		if ensure_random(randvalue)==false
-			randvalue = ((('a'..'z').to_a + ('0'..'9').to_a).shuffle)[0..4].join
+			randvalue = ((('a'..'z').to_a + ('0'..'9').to_a).shuffle)[0..5].join
 		end
 		return randvalue;
 	end
@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
 
 	def get_real_url(current_url)
 		id = -1
-		url_hash = current_url[-5,5]
+		url_hash = current_url[-6,6]
 		@bubbles.each do |bubble|
 			bubble.links.each do |link|
 				if link.link_hash == url_hash

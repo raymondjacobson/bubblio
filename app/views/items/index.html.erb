@@ -1,5 +1,13 @@
 <h1>blah</h1>
-<%= newURL = "/" + params[:item][:hashed].to_s %>
-<script type="text/javascript">
-    
+<script type="javascript">
+	function my_alert(){
+		alert('asdf');
+	}
 </script>
+<p><%=params[:item] %></p>
+<p>Item object: <%=params[:file].to_s%></p>
+<%= newURL = params[:hash].to_s %>
+<%='linkhash:'%>
+<%= @link.link_hash.to_s %>
+<%='end'%>
+<p id='redirect_link'><%= link_to 'home', newURL%></p>

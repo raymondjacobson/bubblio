@@ -2,6 +2,11 @@ class ItemsController < ApplicationController
   before_filter :bubble_owns_item
 
   def index
+    @link = @bubble.links.first
+    @item = @bubble.items.new(params[:item])
+    if @item.save
+      redirect_to bubble_item_path(@item)
+    end
   end
 
   def new

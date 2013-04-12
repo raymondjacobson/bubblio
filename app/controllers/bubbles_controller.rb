@@ -1,6 +1,9 @@
 class BubblesController < ApplicationController
   #before_filter :get_real_url
   def new
+    #if params[:bubble]
+    #  redirect_to bubble_path(@bubble)
+    #end
     @bubble = Bubble.new(params[:bubble])
     @bubble.save
     @items = @bubble.items.order("happened_at DESC")

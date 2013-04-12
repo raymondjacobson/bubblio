@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
 	before_filter :bubble_owns_link
+  
   def new
     respond_to do |format|
     	@link = @bubble.links.new(params[:link])

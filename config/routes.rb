@@ -22,7 +22,7 @@ Bubblio::Application.routes.draw do
 
   get "bubbles/new"
 
-  # get "bubbles/show"
+  # "bubbles/show"
 
   get "bubbles/create"
 

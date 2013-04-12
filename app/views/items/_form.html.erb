@@ -1,19 +1,16 @@
-<%= form_for [@bubble, @item], :method => 'get', :html => {:multipart => true} do |f| %>
+<%= form_for [@bubble, @item], :id=>'new_form', :method=>'get', :html => {:multipart => true} do |f| %>
 	<p>
 		<%= f.file_field :file, :id=>'choose_file' %>
 	</p>
-  <%='hash is here:' %>
-	<% hash = @link.link_hash.inspect # = generate_hash(@bubble.id) %>
-  <%=hash %>
-  <%='endhash'%>
-	<input type="hidden" name='hash' value="<%=hash%>" id="hidden_field" />
+	<input type="hidden" name='hash' id="hidden_field" value=''/>
 	<p><%= f.submit nil, :name=>hash, :id=>'submit_file' %></p>
 <% end %>
 <script>
   var file = document.getElementById('choose_file');
   var submit = document.getElementById('submit_file');
   file.onchange = function(){
-  		getBubbleHash(getIDFromForm(this.form));
+  		//getBubbleHash(getIDFromForm(this.form));
+      file.form.submit();
   };
 
   function manualSubmit(){

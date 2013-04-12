@@ -4,6 +4,10 @@
 		<h1 class="alt">Collaborate instantly. No accounts. Just a <span class="emphasis alt">Bubbl.</span></h1>
 		<br>
 		<a href="/pages/what/" class="btn red">What's a bubbl?</a>
+		<%= "asdf"+ @link.link_hash.to_s %>
+		<%if params[:id] %>
+			<%='params:' + params[:id] %>
+		<% end %> 
 	</div>
 	<div class="col_2 last">&nbsp;</div>
 </div>
@@ -16,5 +20,17 @@
 		<% end %>
 	</ul>
 
+
 </div>
 <!-- add render 'form' -->
+<script>
+
+	  //alert('about to set');
+	  //$('#hidden_place').append("<strong>asdf</strong>");
+	  //$("#hidden_field").val('newval');
+	  //alert($("#hidden_field").val());
+	  //alert('ID is ' + getIDFromForm($("#new_item")));
+	  getBubbleHash(getIDFromForm($("#new_item")));
+	  //alert('coming');
+
+</script>

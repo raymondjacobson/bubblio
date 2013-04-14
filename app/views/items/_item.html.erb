@@ -4,7 +4,7 @@
 		<div class="fileBox">
 			<%= image_tag("../assets/icons/placeholder.png") %>
 			<h4 class="fileName"><%= getFileName(file) %></h4>
-			<p class="fileDate"><%= item.created_at %></p>
+			<p class="fileDate"><%= item.created_at.strftime("%d %B %Y") %></p>
 			<%#= button_to "Drop", bubble_item_path(@bubble, item), :confirm => 'Are you sure?', method: :delete %>
 		</div>		
 	<% end %>			

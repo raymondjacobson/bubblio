@@ -2,23 +2,23 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def bubble_owns_item
-  	@bubble = Bubble.find_by_id(params[:bubble_id] || params[:id])
+  	@bubble = Bubble.find(params[:bubble_id] || params[:id])
   end
 
   def bubble_owns_link
-  	@bubble = Bubble.find_by_id(params[:bubble_id] || params[:id])
+  	@bubble = Bubble.find(params[:bubble_id] || params[:id])
   end
 
 	def generate_hash(value) #NEEDS WORK STILL
 		randvalue = ((('a'..'z').to_a + ('0'..'9').to_a).shuffle)[0..5].join
-		if ensure_random(randvalue)==false
-			randvalue = ((('a'..'z').to_a + ('0'..'9').to_a).shuffle)[0..5].join
-		end
-		return randvalue;
+		#while ensure_random(randvalue)==false
+		#	randvalue = ((('a'..'z').to_a + ('0'..'9').to_a).shuffle)[0..5].join
+		#end
+		#return randvalue;
 	end
 
 	def ensure_random(value)
-		@bubbles = Bubble.find(:all)
+		@bubbles = Bubble.all
 		@bubbles.each do |bubble|
 			bubble.links.each do |link|
 				if link.link_hash == value
@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
 		@bubbles.each do |bubble|
 			bubble.links.each do |link|
 				if link.link_hash == url_hash
-					id = bubble.id
+					return bubble.id
 				end
 			end
 		end

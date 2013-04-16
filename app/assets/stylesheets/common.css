@@ -740,7 +740,7 @@ header .step .stepName {
 .file {
   width: 128px;
   display: inline-block;
-  margin-left: 50px;
+  margin-right: 50px;
   transition: opacity 100ms;
 }
 .file:hover {
@@ -766,7 +766,7 @@ header .step .stepName {
 }
 .file .fileBox .fileName {
   text-align: center;
-  margin-bottom: -4px;
+  margin-bottom: -8px;
 }
 .file .fileBox .fileDate {
   font-size: .55em;
@@ -808,19 +808,25 @@ header .step .stepName {
   margin-bottom: 0;
 }
 .dropZone {
-  padding:100px;
   min-height: 800px;
   background-color: white;
   border: 1px solid #e9e6de;
 }
-.dropZone > h6 {
-  pointer-events:none;
+.dropZone h6 {
+  margin-top: 15%;
+  margin-bottom: -15%;
+  pointer-events: none;
 }
 .dropZone ul {
   list-style: none;
 }
 .dropZone ul li {
   display: inline-block;
+  margin: 100px 50px 0 50px;
+}
+.dropZone ul li a {
+  margin-left: auto;
+  margin-right: auto;
 }
 .dropZone input[type="text"] {
   text-align: center;

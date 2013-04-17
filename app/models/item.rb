@@ -21,7 +21,7 @@ class Item < ActiveRecord::Base
   validates :file,
   	:presence => true,
   	:file_size => {
-  		:maximum => 60.megabytes.to_i
+  		:maximum => 20.megabytes.to_i
   	}
 
   #one convenient method to pass jq_upload the necessary information

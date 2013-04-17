@@ -43,12 +43,18 @@ class BubblesController < ApplicationController
 
   def getID
     url_hash = params[:hash]
-    @bubbles = Bubble.all
+    #@bubbles = Bubble.all
+    #@bubbles.each do |bubble|
+    #  bubble.links.each do |link|
+    #    if link.link_hash == url_hash
+    #      id = bubble.id
+    #    end
+    #  end
+    #end
+    @bubbles = Bubble.includes(:link).all
     @bubbles.each do |bubble|
-      bubble.links.each do |link|
-        if link.link_hash == url_hash
-          id = bubble.id
-        end
+      if bubble.links.link_hash == url_hash
+        id = bubble.id
       end
     end
     respond_to do |format|

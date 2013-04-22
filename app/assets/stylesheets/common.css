@@ -848,6 +848,11 @@ header .step .stepName {
   margin-top: 20px;
   margin-bottom: 15px;
 }
+.delete {
+  background:0;
+  z-index:1000;
+  position: relative;
+}
 footer {
   position: fixed;
   bottom: 0;

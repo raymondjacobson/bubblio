@@ -1,0 +1,913 @@
+/**************************************************
+THEME CONTROLLER by EMBERI CO.
+Name: Emberi Co.
+Author: Ethan Bond
+Date: 3/19/2013
+URL: emberi.co
+****************************************************/
+/********** Document & Grid *********/
+/******** Font Declarations *********/
+/******** Paragraph Types **********/
+/**DEFAULT**/
+/******** Color Palette ***********/
+/* Optional Color Settings */
+/* Palette Constructors */
+/* Complementary colors */
+/* Monochromatic colors */
+*.paragraphDefault h1,
+*.paragraphDefault h2,
+*.paragraphDefault h3,
+*.paragraphDefault h4,
+*.paragraphDefault h5,
+*.paragraphDefault h6 {
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+  color: #9a7aa6;
+}
+*.paragraphDefault p,
+*.paragraphDefault ul,
+*.paragraphDefault li,
+*.paragraphDefault a {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  color: #43433f;
+}
+*.paragraphAlt h1,
+*.paragraphAlt h2,
+*.paragraphAlt h3,
+*.paragraphAlt h4,
+*.paragraphAlt h5,
+*.paragraphAlt h6 {
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+  color: #9a7aa6;
+}
+*.paragraphAlt p,
+*.paragraphAlt ul,
+*.paragraphAlt li,
+*.paragraphAlt a {
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+  color: #43433f;
+}
+* {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+}
+*.alt {
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+}
+/**************************************************
+THEME CONTROLLER by EMBERI CO.
+Name: Emberi Co.
+Author: Ethan Bond
+Date: 3/19/2013
+URL: emberi.co
+****************************************************/
+/********** Document & Grid *********/
+/******** Font Declarations *********/
+/******** Paragraph Types **********/
+/**DEFAULT**/
+/******** Color Palette ***********/
+/* Optional Color Settings */
+/* Palette Constructors */
+/* Complementary colors */
+/* Monochromatic colors */
+*.paragraphDefault h1,
+*.paragraphDefault h2,
+*.paragraphDefault h3,
+*.paragraphDefault h4,
+*.paragraphDefault h5,
+*.paragraphDefault h6 {
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+  color: #9a7aa6;
+}
+*.paragraphDefault p,
+*.paragraphDefault ul,
+*.paragraphDefault li,
+*.paragraphDefault a {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  color: #43433f;
+}
+*.paragraphAlt h1,
+*.paragraphAlt h2,
+*.paragraphAlt h3,
+*.paragraphAlt h4,
+*.paragraphAlt h5,
+*.paragraphAlt h6 {
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+  color: #9a7aa6;
+}
+*.paragraphAlt p,
+*.paragraphAlt ul,
+*.paragraphAlt li,
+*.paragraphAlt a {
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+  color: #43433f;
+}
+* {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+}
+*.alt {
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+}
+/**************************************************
+LESS GRID
+Author: Ethan Bond
+Date: 3/2/2013
+URL: ethanbond.com
+****************************************************/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+caption,
+article,
+aside,
+canvas,
+details,
+embed,
+footer,
+header,
+hgroup,
+menu,
+nav,
+ruby,
+section,
+select,
+input,
+time,
+audio,
+video,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 50%;
+  font: inherit;
+  vertical-align: baseline;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+nav ul {
+  text-align: center;
+  width: 100%;
+  list-style: none;
+}
+nav ul li a {
+  width: 100%;
+}
+nav .horizontal * {
+  display: inline;
+  margin-left: 2em;
+}
+nav .horizontal *:first-child {
+  margin-left: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  color: #43433f;
+  line-height: 1.6em;
+  -webkit-text-size-adjust: none;
+}
+.buttonContainer {
+  /*&:hover .button.bgPurple{
+		background-color: darken(@colorPurple, 2%);
+	}
+	&:hover .button.bgOrange{
+		background-color: darken(@colorOrange, 2%);
+	}*/
+
+}
+.buttonContainer:hover .button.bgRed {
+  background-color: #f0baba;
+}
+.buttonContainer:hover .button.bgGreen {
+  background-color: #d6f898;
+}
+.buttonContainer:hover .button.bgBlue {
+  background-color: #788786;
+}
+.buttonContainer .button {
+  -webkit-transition: color 400ms;
+  -moz-transition: color 400ms;
+  -ms-transition: color 400ms;
+  -o-transition: color 400ms;
+  transition: color 400ms;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  padding: .6em 2em .6em 2em;
+  vertical-align: middle;
+  text-align: center;
+}
+.buttonContainer .button * {
+  margin: 0;
+}
+.buttonContainer .button span img {
+  max-height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+  line-height: 110%;
+  margin-bottom: 1.6em;
+  font-weight: normal;
+}
+p,
+ul,
+li,
+span,
+a {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  line-height: 110%;
+  margin-bottom: 1.6em;
+  font-weight: normal;
+}
+h1.alt,
+h2.alt,
+h3.alt,
+h4.alt,
+h5.alt,
+h6.alt {
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+}
+p.alt,
+ul.alt,
+span.alt,
+a.alt {
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+}
+h1.script,
+h2.script,
+h3.script,
+h4.script,
+h5.script,
+h6.script,
+p.script,
+ul.script,
+span.script {
+  font-family: "Sacramento", script;
+}
+h1.white,
+h2.white,
+h3.white,
+h4.white,
+h5.white,
+h6.white,
+p.white,
+ul.white,
+span.white {
+  color: white;
+}
+h1 {
+  font-size: 2em;
+  margin: 0 0 0.67em 0;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0 0 0.6em 0;
+}
+h3 {
+  font-size: 1.17em;
+  margin: 0 0 .5em 0;
+}
+h4 {
+  font-size: 1em;
+  margin: 0 0 1em 0;
+}
+h5 {
+  font-size: .83em;
+  margin: 0 0 .17em 0;
+}
+h6 {
+  font-size: .75em;
+  margin: 0 0 .15em 0;
+}
+p {
+  font-size: .8em;
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  margin: 0;
+  line-height: 140%;
+}
+.subtitle {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  color: #a3e3e9;
+}
+.subtitle.alt {
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+  color: #a3e3e9;
+}
+h1 + .subtitle,
+h2 + .subtitle {
+  margin-top: -1em;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: 1em;
+}
+.supertitle {
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  color: #43433f;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  margin-bottom: 2em;
+}
+.supertitle.alt {
+  font-family: "Bree Serif", Georgia, Times New Roman, serif;
+  color: #43433f;
+  margin-bottom: -1.5em;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  font-size: 1em;
+}
+p + p {
+  margin-top: .5em;
+}
+p + h1 {
+  margin-top: .5em;
+}
+p + h2 {
+  margin-bottom: .2em;
+  margin-top: 1em;
+  font-weight: bold;
+}
+p + h2 + .subtitle {
+  opacity: .5;
+  color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+p + h3 {
+  margin-top: 2em;
+  font-weight: bold;
+}
+p + h3 + .subtitle {
+  opacity: .5;
+  color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+p + h4 {
+  margin-bottom: 0;
+  margin-top: 1em;
+  font-weight: bold;
+}
+p + h4 + .subtitle {
+  opacity: .5;
+  color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+p + h5 {
+  margin-bottom: 0;
+  margin-top: 1em;
+  font-weight: bold;
+}
+p + h5 + .subtitle {
+  opacity: .5;
+  color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+p + h6 {
+  margin-bottom: 0;
+  margin-top: 1em;
+  font-weight: bold;
+}
+p + h6 + .subtitle {
+  opacity: .5;
+  color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+p + p.bold {
+  opacity: .8;
+}
+p + p.bold + p {
+  margin-top: 0;
+}
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  margin-top: 1em;
+}
+ul {
+  list-style: disc outside;
+}
+a img {
+  display: block;
+}
+img {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin-bottom: 1.6em;
+  max-height: 100%;
+  max-width: 100%;
+}
+img.icon {
+  margin-bottom: 0;
+}
+.container {
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.row {
+  clear: both;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.row.fullwidth {
+  width: 100%;
+  max-width: 100%;
+}
+.row.fullwidth div div {
+  padding: 1em;
+}
+.col_1,
+.col_2,
+.col_3,
+.col_4,
+.col_5,
+.col_6,
+.col_7,
+.col_8,
+.col_9,
+.col_10,
+.col_11 {
+  float: left;
+  margin-right: 3.8%;
+  position: relative;
+}
+.col_1 {
+  width: 4.85%;
+}
+.col_2 {
+  width: 13.5%;
+}
+.col_3 {
+  width: 22.15%;
+}
+.col_4 {
+  width: 30.8%;
+}
+.col_5 {
+  width: 39.45%;
+}
+.col_6 {
+  width: 48.1%;
+}
+.col_7 {
+  width: 56.75%;
+}
+.col_8 {
+  width: 65.4%;
+}
+.col_9 {
+  width: 74.05%;
+}
+.col_10 {
+  width: 82.7%;
+}
+.col_11 {
+  width: 91.35%;
+}
+.col_12 {
+  clear: both;
+  width: 100%;
+  float: left;
+}
+.last {
+  margin-right: 0 !important;
+}
+.nogutter .col_1,
+.nogutter .col_2,
+.nogutter .col_3,
+.nogutter .col_4,
+.nogutter .col_5,
+.nogutter .col_6,
+.nogutter .col_7,
+.nogutter .col_8,
+.nogutter .col_9,
+.nogutter .col_10,
+.nogutter .col_11 {
+  float: left;
+  margin-right: 0 !important;
+  position: relative;
+}
+.nogutter .col_1 {
+  width: 8.333333333333332%;
+}
+.nogutter .col_2 {
+  width: 16.666666666666664%;
+}
+.nogutter .col_3 {
+  width: 25%;
+}
+.nogutter .col_4 {
+  width: 33.33333333333333%;
+}
+.nogutter .col_5 {
+  width: 41.66666666666667%;
+}
+.nogutter .col_6 {
+  width: 50%;
+}
+.nogutter .col_7 {
+  width: 58.333333333333336%;
+}
+.nogutter .col_8 {
+  width: 66.66666666666666%;
+}
+.nogutter .col_9 {
+  width: 75%;
+}
+.nogutter .col_10 {
+  width: 83.33333333333334%;
+}
+.nogutter .col_11 {
+  width: 91.66666666666666%;
+}
+.nogutter .col_12 {
+  clear: both;
+  width: 100%;
+  float: left;
+}
+.last {
+  margin-right: 0 !important;
+}
+.clear,
+.clearboth {
+  clear: both !important;
+}
+.clearleft {
+  clear: left !important;
+}
+.clearright {
+  clear: right !important;
+}
+.textcenter {
+  text-align: center;
+}
+.textright {
+  text-align: right;
+}
+.textleft {
+  text-align: left;
+}
+.mobile-only {
+  display: none;
+}
+@media handheld, only screen and (max-width: 767px) {
+  .row,
+  .body,
+  .container,
+  nav {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .col_1,
+  .col_2,
+  .col_3,
+  .col_4,
+  .col_5,
+  .col_6,
+  .col_7,
+  .col_8,
+  .col_9,
+  .col_10,
+  .col_11,
+  .col_12 {
+    clear: both;
+    float: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: auto;
+    width: -moz-available;
+  }
+  .mobile-hide {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+.huge {
+  font-size: 400%;
+}
+.big {
+  font-size: 200%;
+}
+.small {
+  font-size: 50%;
+}
+.tiny {
+  font-size: 20%;
+}
+.invert {
+  color: white;
+}
+.opacity1 {
+  opacity: .1;
+}
+.opacity2 {
+  opacity: .2;
+}
+.opacity3 {
+  opacity: .3;
+}
+.opacity4 {
+  opacity: .4;
+}
+.opacity5 {
+  opacity: .5;
+}
+.opacity6 {
+  opacity: .6;
+}
+.opacity7 {
+  opacity: .7;
+}
+.opacity8 {
+  opacity: .8;
+}
+.opacity9 {
+  opacity: .9;
+}
+/*******************************
+CORRECTIONS and CUSTOM STYLES
+********************************/
+p a {
+  color: #e9565b;
+  transition: opacity 100ms;
+}
+p a:hover {
+  opacity: .7;
+}
+body {
+  background-color: #e9edec;
+}
+header {
+  height: 40px;
+  padding-bottom: 2em;
+  background: #cdd6d4 url('../assets/logo.png') center center no-repeat;
+  margin-bottom: 65px !important;
+}
+header .logo {
+  background: #cdd6d4 url('../assets/logo.png') center center no-repeat;
+}
+header .step * {
+  display: inline-block;
+}
+header .step .stepNumber {
+  text-align: center;
+  height: 16px;
+  width: 16px;
+  color: #999999;
+  background-color: black;
+  vertical-align: baseline;
+  border-radius: 16px;
+}
+header .step .stepName {
+  text-transform: uppercase;
+}
+.emphasis {
+  opacity: .8;
+}
+.file {
+  transition: opacity 100ms;
+}
+.file:hover {
+  opacity: .6;
+}
+.file .fileBox {
+  position: relative;
+  overflow: hidden;
+  width: 110px;
+  height: 140px;
+  padding-top: 14px;
+  transition: height 100ms;
+}
+.file .fileBox:hover {
+  height: 160px;
+  opacity: .9;
+}
+.file .fileBox .iconContainer {
+  border: 1px solid red;
+  position: relative;
+  border-radius: 3px;
+  background-color: #e9315a;
+  padding: 10px 20px 30px 20px;
+  width: 0;
+  height: 0;
+  font-size: 50px;
+  color: white;
+}
+.file .fileBox .iconType {
+  position: absolute;
+  bottom: 0px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  width: 50%;
+  left: 25%;
+}
+.file .fileBox .fileName {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: -8px;
+}
+.file .fileBox .fileDate {
+  font-size: .55em;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: .7;
+  color: #e9615a;
+}
+.btn {
+  display: inline;
+  padding: 8px 12px 8px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size: .6em;
+  transition: opacity 150ms;
+  vertical-align: middle;
+}
+.btn:hover {
+  cursor: pointer;
+  opacity: .5;
+}
+.btn.red {
+  border: 2px solid #e9615a;
+  color: #e9615a;
+}
+.btn.green {
+  border: 2px solid #87b571;
+  color: #87b571;
+}
+.introBlock {
+  margin: 20px auto 50px auto;
+  padding-bottom: 10px;
+}
+.introBlock h1 {
+  margin-bottom: 0;
+}
+.dropZone {
+  min-height: 800px;
+  background-color: white;
+  border: 1px solid #e9e6de;
+}
+.dropZone h6 {
+  margin-top: 15%;
+  margin-bottom: -15%;
+  pointer-events: none;
+}
+.dropZone ul {
+  list-style: none;
+}
+.dropZone ul li {
+  display: inline-block;
+  margin: 80px 45px 0 45px;
+}
+.dropZone ul li a {
+  margin-left: auto;
+  margin-right: auto;
+}
+.dropZone input[type="text"] {
+  text-align: center;
+  border: 1px solid #d7dcd2;
+  border-radius: 7px;
+  font-size: .7em;
+  width: 100%;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 5px 8px 5px 8px;
+}
+.dropZone .or {
+  font-family: "Georgia", serif;
+  font-style: italic;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  padding-top: 20px;
+  background-color: #e9615a;
+  height: 80px;
+}
+footer a {
+  color: white;
+  font-weight: bold;
+  margin-left: 50px;
+  font-size: .6em;
+  background-color: #e9615a;
+  border-radius: 3px;
+  padding: 10px;
+  transition: background-color 100ms;
+}
+footer a:hover {
+  background-color: #c3221a;
+}
+footer a:first-child {
+  margin-left: 0;
+}
+.team img {
+  height: 150px;
+}
+.term {
+  margin-bottom: 50px;
+}
+form#new_item p {
+  position: relative;
+  margin-bottom: -400px;
+}
+form#new_item p #choose_file {
+  width: 100%;
+  height: 800px;
+  opacity: 0;
+}
+form#new_item p #submit_file {
+  pointer-events: none;
+  opacity: 0;
+}
+.delete {
+  background-color: #fff;
+  font-size: 8px;
+  letter-spacing: 1px;
+  position: relative;
+  color: #e9615a;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.delete:hover {
+  cursor: pointer;
+  color: #c3221a;
+}

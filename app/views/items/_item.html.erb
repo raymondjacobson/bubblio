@@ -2,11 +2,13 @@
 	<% file = item.file_url.to_s %>
 	<%= link_to file, :class => 'file' do %>
 		<div class="fileBox">
-			<%= image_tag("../assets/icons/placeholder.png") %>
+			<i class="iconContainer icon-keyboard">
+				<span class="iconType">.docx</span>
+			</i>
 			<h4 class="fileName"><%= getFileName(file) %></h4>
 			<p class="fileDate"><%= item.created_at.strftime("%d %B %Y") %></p>
 			
+	<%= button_to "Drop", bubble_item_path(@bubble, item), :class=>'delete', :confirm => 'Are you sure?', method: :delete %>	
 		</div>		
 	<% end %>		
-	<%= button_to "Drop", bubble_item_path(@bubble, item), :class=>'delete', :confirm => 'Are you sure?', method: :delete %>	
 </li>

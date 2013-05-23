@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag "common" %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700|Bree+Serif' rel='stylesheet' type='text/css'>
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
   <%= javascript_include_tag "dropzone.min" %>
@@ -26,14 +28,16 @@
 				}).always(function(data){
 					switchContent($(".introBlock h1"), constructURL(data));
 				});
-		})
+		});
+
+		$(".bubblTitle").html("bubbl.io/" + getHashFromURL());
 
   	});
 
   function getHashFromURL(){
     var currentURL = document.URL;
     var currentURL = ""+currentURL;
-    var currentURL = currentURL.slice(-6,-1);
+    var currentURL = currentURL.slice(-6, document.URL.length);
     return currentURL;
   }
 
@@ -60,9 +64,9 @@
   }
 
 
-  function constructURL(hash){
-    return "/"+hash;
-  }
+	  function constructURL(hash){
+	    return "/"+hash;
+	  }
 	  
 	function getBubbleID(hash){
 		var bubbleID;

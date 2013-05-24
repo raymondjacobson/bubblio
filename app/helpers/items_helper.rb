@@ -11,7 +11,7 @@ module ItemsHelper
 		return ext.reverse
 	end
 	def getFileName(value)
-		max_length = 14
+		max_length = 10
 		pass_ext = false
 		name = ""
 		value.reverse.split("").each do |i|
